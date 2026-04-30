@@ -78,6 +78,13 @@
             <button class="ghost" id="exportBtn">Save Backup</button>
             <button class="ghost" id="importBtn">Load Backup / Excel</button>
             <button class="ghost" id="resetBtn">Reset sample</button>
+            <!-- START REMOVABLE TASK IMPORT BLOCK -->
+            <label class="ghost import-task-label" for="fileInput" style="display:inline-flex;align-items:center;gap:.35rem;cursor:pointer;">
+              Import Task File
+            </label>
+            <input type="file" id="fileInput" accept=".json,.csv" hidden />
+            <button class="ghost" type="button" onclick="importFile()">Load Task File</button>
+            <!-- END REMOVABLE TASK IMPORT BLOCK -->
             <input id="importFile" type="file" accept="application/json,.json,.xlsx,.xlsm" hidden />
           </div>
         </section>
@@ -806,6 +813,9 @@
     <section class="print-report" id="printReport" aria-hidden="true"></section>
 
     <script src="app.js"></script>
+    <!-- START REMOVABLE TASK IMPORT SCRIPT -->
+    <script src="importTasks.js"></script>
+    <!-- END REMOVABLE TASK IMPORT SCRIPT -->
     <script>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
